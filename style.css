@@ -1,55 +1,101 @@
 :root {
-    --pink: #FFD1DC;
-    --blue: #AEC6CF;
+    /* Warna pastel yang lebih hidup agar tidak terlihat putih polos */
+    --pink: #FFB6C1; 
+    --blue: #87CEFA;
+    --text-main: #4A4A4A; /* Warna teks gelap agar terbaca */
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
-body { font-family: 'Arial', sans-serif; overflow: hidden; background: linear-gradient(135deg, var(--pink), var(--blue)); }
+body { 
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; 
+    overflow: hidden; 
+    background: #fdfdfd; /* Background cadangan */
+}
 
 .screen {
     width: 100%; height: 100vh;
     display: flex; flex-direction: column; justify-content: center; align-items: center;
-    position: absolute; transition: 1s ease; text-align: center;
+    position: absolute; 
+    transition: 1s ease-in-out; 
+    text-align: center;
+    /* Gradasi diperkuat */
+    background: linear-gradient(135deg, var(--pink) 0%, var(--blue) 100%);
 }
 
-.hidden { opacity: 0; pointer-events: none; transform: scale(0.9); }
+.hidden { 
+    opacity: 0; 
+    pointer-events: none; 
+    transform: scale(1.1); /* Efek zoom out saat menghilang */
+}
 
-h1 { font-size: 3rem; color: white; margin-bottom: 20px; text-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+/* Teks Utama */
+h1 { 
+    font-size: 3.5rem; 
+    color: white; 
+    margin-bottom: 30px; 
+    text-shadow: 2px 4px 10px rgba(0,0,0,0.15); /* Bayangan agar teks putih menonjol */
+    font-weight: bold;
+}
 
-/* Tombol */
+/* Tombol Open yang Lebih Cantik */
 #open-btn, .link-btn {
-    padding: 15px 40px; border: none; border-radius: 50px;
-    background: white; color: #adadad; cursor: pointer;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1); transition: 0.3s;
+    padding: 18px 50px; 
+    border: none; 
+    border-radius: 50px;
+    background: white; 
+    color: var(--pink); 
+    font-weight: bold;
+    font-size: 1.2rem;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1); 
+    transition: 0.4s;
 }
 
-#open-btn:hover, .link-btn:hover { transform: scale(1.1); background: var(--pink); color: white; }
+#open-btn:hover, .link-btn:hover { 
+    transform: translateY(-5px); 
+    box-shadow: 0 12px 25px rgba(0,0,0,0.2);
+    background: #fff;
+    color: var(--blue);
+}
 
-/* Struktur Slide */
+/* Slider Box */
 .slider {
-    width: 300px; height: 300px;
-    position: relative; margin-bottom: 20px;
-    border: 8px solid white; border-radius: 20px;
-    overflow: hidden; box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    width: 320px; height: 400px;
+    position: relative; margin-bottom: 25px;
+    border: 10px solid white; 
+    border-radius: 25px;
+    overflow: hidden; 
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+    z-index: 10;
 }
 
 .slide {
     width: 100%; height: 100%;
     object-fit: cover;
     position: absolute; top: 0; left: 0;
-    opacity: 0; transition: opacity 1s ease-in-out;
+    opacity: 0; 
+    transition: opacity 1.5s ease; /* Transisi slide lebih lambat & halus */
 }
 
 .slide.active { opacity: 1; }
 
 .message-box {
-    background: rgba(255, 255, 255, 0.7);
-    padding: 25px; border-radius: 20px; max-width: 80%;
+    background: rgba(255, 255, 255, 0.85); /* Lebih solid agar teks terbaca */
+    backdrop-filter: blur(5px); /* Efek kaca kekinian */
+    padding: 30px; 
+    border-radius: 25px; 
+    max-width: 85%;
+    color: var(--text-main);
+    line-height: 1.6;
     z-index: 5;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
 
-/* Bunga */
+/* Bunga Bertaburan */
 #flower-container { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 1; }
-.flower { position: absolute; border-radius: 50% 0 50% 0; animation: fall linear infinite; }
-@keyframes fall { 0% { transform: translateY(-10vh) rotate(0deg); } 100% { transform: translateY(110vh) rotate(360deg); } }
+.flower { position: absolute; border-radius: 50% 0 50% 0; animation: fall linear infinite; opacity: 0.8; }
+@keyframes fall { 
+    0% { transform: translateY(-10vh) rotate(0deg); } 
+    100% { transform: translateY(110vh) rotate(720deg); } 
+}
