@@ -7,32 +7,29 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Musik -->
     <audio id="hbd-music" loop>
         <source src="assets/music.mp3" type="audio/mpeg">
     </audio>
 
-    <!-- Halaman Awal -->
     <div id="landing" class="screen">
         <h1 class="fade-in">Happy Birthday</h1>
         <button id="open-btn">Open</button>
     </div>
 
-    <!-- Halaman Konten Utama -->
     <div id="main-content" class="screen hidden">
-        <div class="gallery">
-            <img src="assets/foto1.jpg" alt="Moment 1">
-            <img src="assets/foto2.jpg" alt="Moment 2">
-            <img src="assets/foto3.jpg" alt="Moment 3">
+        <!-- Sistem Slide Gambar -->
+        <div class="slider">
+            <img src="assets/foto1.jpg" class="slide active" alt="Moment 1">
+            <img src="assets/foto2.jpg" class="slide" alt="Moment 2">
+            <img src="assets/foto3.jpg" class="slide" alt="Moment 3">
         </div>
         
         <div class="message-box">
-            <p>Selamat ulang tahun! Semoga setiap retakan dalam hidupmu terisi dengan cahaya dan kebahagiaan yang abadi.</p>
-            <button class="link-btn" onclick="window.location.href='https://google.com'">Buka Keajaiban Lain</button>
+            <p>Selamat ulang tahun! Semoga harimu dipenuhi keajaiban.</p>
+            <button class="link-btn" onclick="window.location.href='https://google.com'">Buka Hadiah</button>
         </div>
     </div>
 
-    <!-- Wadah Bunga -->
     <div id="flower-container"></div>
 
     <script src="script.js"></script>
