@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Audio Element -->
+    <audio id="hbd-music" loop>
+        <source src="assets/music.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Halaman Utama (Gerbang) -->
+    <div id="landing" class="screen">
+        <h1 class="fade-in">Happy Birthday</h1>
+        <button id="open-btn">Open</button>
+    </div>
+
+    <!-- Halaman Konten (Setelah Open) -->
+    <div id="main-content" class="screen hidden">
+        <div class="gallery">
+            <img src="assets/foto1.jpg" alt="Moment 1">
+            <img src="assets/foto2.jpg" alt="Moment 2">
+            <img src="assets/foto3.jpg" alt="Moment 3">
+        </div>
+        <div class="message">
+            <p>Tuliskan pesanmu di sini. Biarkan setiap kata menjadi gema di keheningan.</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
