@@ -67,3 +67,50 @@ h1 {
     background: rgba(255, 255, 255, 0.5);
     border-radius: 20px;
 }
+/* Container Bunga di Belakang Konten */
+.flower-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Biarkan klik menembus */
+    z-index: 0; /* Di belakang konten utama */
+    overflow: hidden;
+}
+
+/* Kelopak Bunga Jatuh */
+.flower {
+    position: absolute;
+    background-color: var(--pink-pastel);
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%); /* Bentuk bunga sederhana */
+    opacity: 0.7;
+    animation: flowerFall linear infinite;
+}
+
+@keyframes flowerFall {
+    0% { transform: translateY(-10vh) rotate(0deg); opacity: 0; }
+    10% { opacity: 0.7; }
+    90% { opacity: 0.7; }
+    100% { transform: translateY(110vh) rotate(360deg); opacity: 0; }
+}
+
+/* Tombol Tautan Baru di bawah Pesan */
+.open-link-btn {
+    margin-top: 20px;
+    padding: 10px 25px;
+    font-size: 1rem;
+    background: white;
+    border: 2px solid var(--pink-pastel);
+    border-radius: 25px;
+    color: var(--text-color);
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    transition: 0.3s ease;
+}
+
+.open-link-btn:hover {
+    transform: scale(1.05);
+    background: var(--pink-pastel);
+    color: white;
+}
